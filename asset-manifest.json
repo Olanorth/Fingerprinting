@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Fingerprinting/static/css/main.e6c13ad2.css",
-    "main.js": "/Fingerprinting/static/js/main.c7a9316a.js",
+    "main.js": "/Fingerprinting/static/js/main.ff1a1bbc.js",
     "static/js/787.d5fa4d18.chunk.js": "/Fingerprinting/static/js/787.d5fa4d18.chunk.js",
     "index.html": "/Fingerprinting/index.html",
     "main.e6c13ad2.css.map": "/Fingerprinting/static/css/main.e6c13ad2.css.map",
-    "main.c7a9316a.js.map": "/Fingerprinting/static/js/main.c7a9316a.js.map",
+    "main.ff1a1bbc.js.map": "/Fingerprinting/static/js/main.ff1a1bbc.js.map",
     "787.d5fa4d18.chunk.js.map": "/Fingerprinting/static/js/787.d5fa4d18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c7a9316a.js"
+    "static/js/main.ff1a1bbc.js"
   ]
 }
