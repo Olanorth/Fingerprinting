@@ -164,7 +164,7 @@ const CanvasImageRenderer = () => {
       // Log the hashed ID to the console
       // console.log('Hashed ID:', hash);
 
-    axios.post('http://localhost:8080/api/saveHash', { hash })
+    axios.post('https://fingerprinting-web-app.lm.r.appspot.com/api/saveHash', { hash })
         .then(response => {
           console.log(response.data);
         })

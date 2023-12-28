@@ -21,7 +21,7 @@ function DoNotTrackStatus() {
 
         // console.log('DNT:', isDoNotTrackEnabled)
         // Post 'Do Not Track' status to the server for storage
-        axios.post('http://localhost:8080/api/storeDNTDetails', {
+        axios.post('https://fingerprinting-web-app.lm.r.appspot.com/api/storeDNTDetails', {
           doNotTrackStatus: isDoNotTrackEnabled 
         // DNT: doNotTrackEnabled,
         })

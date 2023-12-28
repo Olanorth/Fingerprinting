@@ -38,7 +38,7 @@ function CheckCookies() {
           // console.log('Cookie saved for the first visit.');
 
           // Make an API request to the server to indicate the first visit
-          axios.post('http://localhost:8080/api/firstVisit', { isFirstVisit: true })
+          axios.post('https://fingerprinting-web-app.lm.r.appspot.com/api/firstVisit', { isFirstVisit: true })
           .then(response => {
             console.log('Server response:', response.data);
           })
