@@ -2,7 +2,7 @@
   "homepage": "http://olanorth.github.io/Fingerprinting",
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://localhost:8080",
+  "proxy": "https://fingerprinting-web-app.lm.r.appspot.com",
   "private": true,
   "dependencies": {
     "@fingerprintjs/fingerprintjs-pro-react": "^2.6.2",

@@ -29,7 +29,7 @@ function WebGLDetails() {
 
       // console.log('WebGL details: ', details)
         // Post WebGL details to the server for storage
-        axios.post('http://localhost:8080/api/storeWebGLdetails', {
+        axios.post('https://fingerprinting-web-app.lm.r.appspot.com/api/storeWebGLdetails', {
           webGLDetails: details,
         })
         .then(response => {

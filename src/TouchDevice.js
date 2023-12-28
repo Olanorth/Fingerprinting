@@ -58,7 +58,7 @@ function TouchDetectionComponent() {
 
       // Send the touch information to the server
       try {
-        const response = await axios.post('http://localhost:8080/api/touchInfo', { isTouchDevice: touchDevice });
+        const response = await axios.post('https://fingerprinting-web-app.lm.r.appspot.com/api/touchInfo', { isTouchDevice: touchDevice });
         console.log('Server response:', response.data);
       } catch (error) {
         console.error('Error sending touch information to the server:', error.message);
