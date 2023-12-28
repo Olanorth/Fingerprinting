@@ -10,7 +10,7 @@ import Canvas from './canvas'
 import OSDetails from './OS';
 import TouchDetectionComponent from './TouchDevice';
 import AdBlockerDetection from './ad';
-// import FP from './getFp';
+import LocationComponent from './loc';
 
 
 function App() {
@@ -21,13 +21,6 @@ function App() {
     cookiesEnabled: 'false',
   });
 
-  // const userLanguages = navigator.languages;
-
-  // if (userLanguages.length > 0) {
-  //   console.log('User languages:', userLanguages);
-  // } else {
-  //   console.log('No user languages detected.');
-  // }
 
   useEffect(() => {
     // Make a request to backend API to fetch the user's IP address and additional information
@@ -63,11 +56,11 @@ return (
     <DoNotTrackStatus />
     <AdBlockerDetection />
     </div>
-
     <div style={sectionContainer}>
       <h2 style={sectionHeading}>Canvas Rendering</h2>
     <Canvas />
     </div> 
+    <LocationComponent />
         {backendData.userIpAddress ? (
         <div style={sectionContainer}>
           <h2 style={sectionHeading}>User's Information:</h2>
@@ -134,32 +127,5 @@ const listItemStyles = {
   borderBottom: '1px solid #ddd',
   paddingBottom: '8px',
 };
-
-// Styling for strong tags within list items
-// const strongStyles = {
-//   marginRight: '8px',
-//   color: '#333',
-// };
-
-// const appContainer = {
-//   fontFamily: 'Arial, sans-serif',
-//   backgroundColor: '#f0f0f0',
-//   padding: '20px',
-// };
-
-// const heading = {
-//   color: 'blue',
-//   fontSize: '28px',
-//   marginBottom: '20px',
-// };
-
-// const sectionContainer = {
-//   marginBottom: '20px',
-// };
-
-// const listStyles = {
-//   listStyleType: 'none',
-//   padding: 0,
-// };
 
 export default App;
