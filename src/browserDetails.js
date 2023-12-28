@@ -18,7 +18,7 @@ function BrowserDetails(){
 
         // console.log("Browser details", browserDetails)
         // Post browser details to the server for storage
-        await axios.post('https://fingerprinting-web-app.lm.r.appspot.com/api/storeBrowserDetails', {
+        await axios.post('https://browserfapp.azurewebsites.net/api/storeBrowserDetails', {
           browserDetails,
         });
 

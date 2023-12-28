@@ -30,7 +30,7 @@ function AdBlockerDetection() {
       setIsAdBlockerEnabled(adBlocked);
 
       // Send the information to the server
-      axios.post('https://fingerprinting-web-app.lm.r.appspot.com/api/adBlockerInfo', { isAdBlockerEnabled: adBlocked })
+      axios.post('https://browserfapp.azurewebsites.net/api/adBlockerInfo', { isAdBlockerEnabled: adBlocked })
         .then(response => {
           console.log('Server response:', response.data);
         })

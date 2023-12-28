@@ -41,7 +41,7 @@ function OSDetails() {
 
         // console.log("OS:", detectedOsVersion)
         // Post OS details to the server for storage 
-         axios.post("https://fingerprinting-web-app.lm.r.appspot.com/api/storeOsDetails", {
+         axios.post("https://browserfapp.azurewebsites.net/api/storeOsDetails", {
           osDetails: detectedOsVersion,
         });
 
