@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     // Make a request to backend API to fetch the user's IP address and additional information
-    axios.get('/api')
+    axios.get('https://fingerprinting-web-app.lm.r.appspot.com/api')
       .then(response => {
       //     setBackendData(response.data);
       // })
