@@ -14,30 +14,42 @@ import LocationComponent from './loc';
 
 
 function App() {
-    const [backendData, setBackendData] = useState({
-    osDetails: 'Unknown',
-    browserDetails: 'Unknown',
-    plugins: 'Unknown',
-    cookiesEnabled: 'false',
-  });
+  //   const [backendData, setBackendData] = useState({
+  //   osDetails: 'Unknown',
+  //   browserDetails: 'Unknown',
+  //   plugins: 'Unknown',
+  //   cookiesEnabled: 'false',
+  // });
 
 
+  // useEffect(() => {
+  //   // Make a request to backend API to fetch the user's IP address and additional information
+  //   axios.get('https://browserfapp.azurewebsites.net')
+  //     .then(response => {
+  //     //     setBackendData(response.data);
+  //     // })
+  //       setBackendData(prevData => ({
+  //         ...prevData,
+  //         ...response.data,
+  //       }));
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data from backend:', error.message);
+  //     });
+  // }, []);
+  
+  const [ipAddress, setIpAddress] = useState(''); 
+  
   useEffect(() => {
-    // Make a request to backend API to fetch the user's IP address and additional information
-    axios.get('https://browserfapp.azurewebsites.net/api')
+    // Make a request to the server to get the IP address
+    axios.get('https://browserfapp.azurewebsites.net')
       .then(response => {
-      //     setBackendData(response.data);
-      // })
-        setBackendData(prevData => ({
-          ...prevData,
-          ...response.data,
-        }));
+        setIpAddress(response.data.ip);
       })
       .catch(error => {
-        console.error('Error fetching data from backend:', error.message);
+        console.error('Error fetching IP address:', error.message);
       });
   }, []);
-  
 
 return (
   <div style ={appContainer}>
@@ -61,23 +73,10 @@ return (
     <Canvas />
     </div> 
     <LocationComponent />
-        {backendData.userIpAddress ? (
-        <div style={sectionContainer}>
-          <h2 style={sectionHeading}>User's Information:</h2>
-          <ul style={listStyles}>
-            <li style={listItemStyles}><strong>IP Address:</strong> {backendData.userIpAddress}</li>
-            <li style={listItemStyles}><strong>City:</strong> {backendData.city}</li>
-            <li style={listItemStyles}><strong>Region:</strong> {backendData.region}</li>
-            <li style={listItemStyles}><strong>Country:</strong> {backendData.country}</li>
-            <li style={listItemStyles}><strong>Location:</strong> {backendData.location}</li>
-            <li style={listItemStyles}><strong>Postal Code:</strong> {backendData.postal}</li>
-            <li style={listItemStyles}><strong>Timezone:</strong> {backendData.timezone}</li>
-            <li style={listItemStyles}><strong>Organization:</strong> {backendData.organization}</li>
-          </ul>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div style={sectionContainer}>
+        <h2 style={sectionHeading}>Your IP Address:</h2>
+        <p>{ipAddress || 'Loading...'}</p>
+    </div>
   </div>
       );
 }
