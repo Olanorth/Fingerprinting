@@ -51,13 +51,13 @@ function Plugins() {
     <div>
       <h2>Plugin Details:</h2>
       <ul>
-        <li>Flash Enabled: {pluginDetails.isFlashEnabled ? 'Yes' : 'No'}</li>
+        <li style={listItemStyles}>Flash Enabled: {pluginDetails.isFlashEnabled ? 'Yes' : 'No'}</li>
         <li>
           Installed Plugins:
-          <ul>
+          <ul >
             {pluginDetails.installedPlugins.length > 0 ? (
               pluginDetails.installedPlugins.map((plugin, index) => (
-                <li key={index}>{plugin}</li>
+                <li style={listItemStyles}key={index}>{plugin}</li>
               ))
             ) : (
               <li>No installed plugins</li>
@@ -68,5 +68,11 @@ function Plugins() {
     </div>
   );
 }
+
+const listItemStyles = {
+  marginBottom: '8px',
+  borderBottom: '1px solid #ddd',
+  paddingBottom: '8px',
+};
 
 export default Plugins;

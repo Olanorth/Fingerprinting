@@ -9,6 +9,7 @@ const LocationComponent = () => {
     country: 'Unknown',
     postcode: 'Unknown',
   });
+  const [permissionStatus, setPermissionStatus] = useState('Unknown');
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -32,8 +33,16 @@ const LocationComponent = () => {
             // Update state with the location data
             setLocationData(updatedLocationData);
 
-            // Send the location data to the server
-            await axios.post('https://browserfapp.azurewebsites.net/api/storeLocationDetails', updatedLocationData);
+            // Send the location data to the server along with permission status
+            axios.post('http://localhost:4000/api/storeLocationDetails', {
+              updatedLocationData,
+              permissionStatus,
+            });
+
+            // console.log('Successfully posted:', updatedLocationData);
+
+            // Update permission status state
+            setPermissionStatus('Accepted');
           } catch (error) {
             console.error('Error fetching location details:', error.message);
           }
@@ -41,6 +50,12 @@ const LocationComponent = () => {
         (error) => {
           if (error.code === error.PERMISSION_DENIED) {
             console.error("User denied the request for geolocation.");
+            // Send a message to the server indicating permission denial
+            axios.post('https://browserfapp.azurewebsites.net/api/storeLocationDetails', {
+              permissionStatus: 'Denied',
+            });
+            // Update permission status state
+            setPermissionStatus('Denied');
           } else {
             console.error(`Error getting location: ${error.message}`);
           }
@@ -54,13 +69,24 @@ const LocationComponent = () => {
   return (
     <div>
       <h2>Your location:</h2>
-      <p>Latitude: {locationData.latitude}</p>
-      <p>Longitude: {locationData.longitude}</p>
-      <p>City: {locationData.city}</p>
-      <p>Country: {locationData.country}</p>
-      <p>Postcode: {locationData.postcode}</p>
+      {permissionStatus === 'Accepted' && (
+        <>
+          <p style={listItemStyles}>Latitude: {locationData.latitude}</p>
+          <p style={listItemStyles}>Longitude: {locationData.longitude}</p>
+          <p style={listItemStyles}>City: {locationData.city}</p>
+          <p style={listItemStyles}>Country: {locationData.country}</p>
+          <p style={listItemStyles}>Postcode: {locationData.postcode}</p>
+        </>
+      )}
+      {permissionStatus === 'Denied' && <p>Location permission denied.</p>}
     </div>
   );
+};
+
+const listItemStyles = {
+  marginBottom: '8px',
+  borderBottom: '1px solid #ddd',
+  paddingBottom: '8px',
 };
 
 export default LocationComponent;

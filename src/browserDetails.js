@@ -7,22 +7,25 @@ function BrowserDetails(){
         const sendBrowserDetails = useCallback(async () => {
           try {
     const browserDetails = {
-        // userAgent: navigator.userAgent,
+        userAgent: navigator.userAgent,
         appName: navigator.appName,
         appVersion: navigator.appVersion,
         platform: navigator.platform,
         userLanguages: navigator.languages,
         screenWidth: window.screen.width,
         screenHeight: window.screen.height,
+        availScreenWidth: window.screen.availWidth,
+        availscreenHeight: window.screen.availHeight,
+        colorDepth: window.screen.colorDepth,
+        currency: navigator.hardwareConcurrency,
       };
 
-        // console.log("Browser details", browserDetails)
         // Post browser details to the server for storage
         await axios.post('https://browserfapp.azurewebsites.net/api/storeBrowserDetails', {
           browserDetails,
         });
 
-        // console.log('Browser details stored successfully.');
+        console.log('Browser details stored successfully.');
       } catch (error) {
         console.error('Error storing browser details:', error.message);
       }
@@ -42,16 +45,25 @@ function BrowserDetails(){
         <div>
           <h2>Browser Details:</h2>
           <ul>
-            {/* <li>User Agent: {navigator.userAgent}</li> */}
-            <li>App Name: {navigator.appName}</li>
-            <li>App Version: {navigator.appVersion}</li>
-            <li>Platform: {navigator.platform}</li>
-            <li>Languages: {[navigator.languages]}</li>
-            <li>Screen Width: {window.screen.width} pixels</li>
-            <li>Screen Height: {window.screen.height} pixels</li>
+            <li style={listItemStyles}>User Agent: {navigator.userAgent}</li>
+            <li style={listItemStyles}>App Name: {navigator.appName}</li>
+            <li style={listItemStyles}>App Version: {navigator.appVersion}</li>
+            <li style={listItemStyles}>Platform: {navigator.platform}</li>
+            <li style={listItemStyles}>Languages: {[navigator.languages]}</li>
+            <li style={listItemStyles}>Available Screen Width: {window.screen.availWidth} pixels</li>
+            <li style={listItemStyles}>Available Screen Height: {window.screen.availHeight} pixels</li>
+            <li style={listItemStyles}>Total Screen Width: {window.screen.width} pixels</li>
+            <li style={listItemStyles}>Total Screen Height: {window.screen.height} pixels</li>
+            <li style={listItemStyles}>Color Depth: {window.screen.colorDepth} pixels</li>
+            <li style={listItemStyles}>Concurrency: {navigator.hardwareConcurrency} </li>
           </ul>
         </div>
       );
 }
 
+const listItemStyles = {
+  marginBottom: '8px',
+  borderBottom: '1px solid #ddd',
+  paddingBottom: '8px',
+};
 export default BrowserDetails;

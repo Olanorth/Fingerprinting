@@ -77,6 +77,14 @@ return (
         <h2 style={sectionHeading}>Your IP Address:</h2>
         <p>{ipAddress || 'Loading...'}</p>
     </div>
+    <div>
+      <h2>CPU Information:</h2>
+      {cpuInfo ? (
+        <pre>{JSON.stringify(cpuInfo, null, 2)}</pre>
+      ) : (
+        <p>Loading CPU information...</p>
+      )}
+    </div>
   </div>
       );
 }
@@ -115,16 +123,6 @@ const sectionHeading = {
   marginBottom: '10px',
 };
 
-const listStyles = {
-  listStyleType: 'none',
-  padding: 0,
-};
 
-// Additional styling for list items
-const listItemStyles = {
-  marginBottom: '8px',
-  borderBottom: '1px solid #ddd',
-  paddingBottom: '8px',
-};
 
 export default App;

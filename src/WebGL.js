@@ -45,14 +45,19 @@ function WebGLDetails() {
     <div>
       <h2>WebGL Details:</h2>
       <ul>
-        <li>WebGL Vendor: {webGLDetails.webglVendor}</li>
-        <li>WebGL Renderer: {webGLDetails.webglRenderer}</li>
-        <li>WebGL Version: {webGLDetails.webglVersion}</li>
+        <li style={listItemStyles}>WebGL Vendor: {webGLDetails.webglVendor}</li>
+        <li style={listItemStyles}>WebGL Renderer: {webGLDetails.webglRenderer}</li>
+        <li style={listItemStyles}>WebGL Version: {webGLDetails.webglVersion}</li>
       </ul>
     </div>
   );
 }
 
+const listItemStyles = {
+  marginBottom: '8px',
+  borderBottom: '1px solid #ddd',
+  paddingBottom: '8px',
+};
 export default WebGLDetails;
 
 

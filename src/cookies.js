@@ -62,27 +62,6 @@ function CheckCookies() {
   }, []);
 
 
-//   function hasUserConsented() {
-//     // Check if the 'consent' cookie exists
-//     const consentCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('consent='));
-    
-//     // Return true if the cookie exists, indicating that the user has given consent
-//     return consentCookie !== undefined;
-//   }
-
-//   // Assuming this is part of your client-side code
-// const userConsented = hasUserConsented();
-
-// // Make an API request to the server to indicate the user's consent status
-// axios.post('http://localhost:4000/api/consentStatus', { userConsented })
-//   .then(response => {
-//     console.log('Server response:', response.data);
-//   })
-//   .catch(error => {
-//     console.error('Error making API request:', error.message);
-//   });
-
-
   return (
     <div>
       <h2>Cookies Status:</h2>
@@ -94,6 +73,7 @@ function CheckCookies() {
             : 'User declined consent or cookies are not enabled.'}
         </p>
       )}
+      
     </div>
   );
 }
