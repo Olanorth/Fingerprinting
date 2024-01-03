@@ -39,7 +39,6 @@ function App() {
   // }, []);
   
   const [ipAddress, setIpAddress] = useState(''); 
-  const [cpuInfo, setCpuInfo] = useState(null);
 
   useEffect(() => {
     // Make a request to the server to get the IP address
@@ -52,20 +51,7 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    const fetchCpuInfo = async () => {
-      try {
-        const response = await axios.get('https://browserfapp.azurewebsites.net/api/getCPUInfo');
-        // Extracting relevant information (model and speed) from the response
-        const extractedInfo = response.data.map(({ model, speed }) => ({ model, speed }));
-        setCpuInfo(extractedInfo[0]); // Assuming you want to return the first element
-      } catch (error) {
-        console.error('Error fetching CPU info:', error);
-      }
-    };
 
-    fetchCpuInfo();
-  }, []);
 
 return (
   <div style ={appContainer}>
@@ -92,14 +78,6 @@ return (
     <div style={sectionContainer}>
         <h2 style={sectionHeading}>Your IP Address:</h2>
         <p>{ipAddress || 'Loading...'}</p>
-    </div>
-    <div>
-      <h2>CPU Information:</h2>
-      {cpuInfo ? (
-        <pre>{JSON.stringify(cpuInfo, null, 2)}</pre>
-      ) : (
-        <p>Loading CPU information...</p>
-      )}
     </div>
   </div>
       );
