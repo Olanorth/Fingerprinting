@@ -127,30 +127,30 @@ function App() {
           </nav>
         </div>
         <div>
-                  <h2 style={sectionHeading}>Device details</h2>
-                  <BrowserDetails />
-                  <Plugins />
-                  <WebGLDetails />
-                  <OSDetails />
-                  <TouchDetectionComponent />
-                  <h2 style={sectionHeading}>Privacy settings</h2>
-                  <CheckCookies />
-                  <DoNotTrackStatus />
-                  <AdBlockerDetection />
-                  <div style={sectionContainer}>
-                    <h2 style={sectionHeading}>Canvas Rendering</h2>
-                    <Canvas />
-                  </div> 
-                  <LocationComponent />
-                  <DeviceIdComponent />
-                  <div style={sectionContainer}>
-                      <h2 style={sectionHeading}>Your IP Address:</h2>
-                      <ul>
-                      <p>{ipAddress || 'Loading...'}</p>
-                      </ul>
-                  </div>
-                </div>
-              </div>
+          <h2 style={sectionHeading}>Device details</h2>
+          <BrowserDetails />
+          <Plugins />
+          <WebGLDetails />
+          <OSDetails />
+          <TouchDetectionComponent />
+          <h2 style={sectionHeading}>Privacy settings</h2>
+          <CheckCookies />
+          <DoNotTrackStatus />
+          <AdBlockerDetection />
+          <div style={sectionContainer}>
+            <h2 style={sectionHeading}>Canvas Rendering</h2>
+            <Canvas />
+          </div> 
+          <LocationComponent />
+          <DeviceIdComponent />
+          <div style={sectionContainer}>
+              <h2 style={sectionHeading}>Your IP Address:</h2>
+              <ul>
+                <p>{ipAddress || 'Loading...'}</p>
+              </ul>
+          </div>
+        </div>
+      </div>
     );
   }
   
