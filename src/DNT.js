@@ -37,7 +37,9 @@ function DoNotTrackStatus() {
   return (
     <div>
       <h2>'Do Not Track' Status:</h2>
+      <ul>
       <p>{doNotTrackEnabled}</p>
+      </ul>
     </div>
   );
 }

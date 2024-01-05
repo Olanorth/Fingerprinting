@@ -65,6 +65,7 @@ function CheckCookies() {
   return (
     <div>
       <h2>Cookies Status:</h2>
+      <ul>
       <p>{cookiesEnabled ? 'Cookies are enabled' : 'Cookies are disabled'}</p>
       {userConsent !== null && (
         <p>
@@ -73,7 +74,7 @@ function CheckCookies() {
             : 'User declined consent or cookies are not enabled.'}
         </p>
       )}
-      
+      </ul>
     </div>
   );
 }

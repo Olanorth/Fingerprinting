@@ -46,6 +46,7 @@ function AdBlockerDetection() {
   return (
     <div>
       <h2>Ad Blocker Detection:</h2>
+      <ul>
       {isAdBlockerEnabled === null ? (
         <p>Checking ad blocker status...</p>
       ) : isAdBlockerEnabled ? (
@@ -53,6 +54,7 @@ function AdBlockerDetection() {
       ) : (
         <p>Ad blocker is not enabled.</p>
       )}
+      </ul>
     </div>
   );
 }

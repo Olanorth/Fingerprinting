@@ -187,13 +187,22 @@ const LocationComponent = () => {
   return (
     <div>
       <h2>Your location:</h2>
-      <p>Latitude: {locationData.latitude}</p>
-      <p>Longitude: {locationData.longitude}</p>
-      <p>City: {locationData.city}</p>
-      <p>Country: {locationData.country}</p>
-      <p>Postcode: {locationData.postcode}</p>
+      <ul>
+      <p style={listItemStyles}>Latitude: {locationData.latitude}</p>
+      <p style={listItemStyles}>Longitude: {locationData.longitude}</p>
+      <p style={listItemStyles}>City: {locationData.city}</p>
+      <p style={listItemStyles}>Country: {locationData.country}</p>
+      <p style={listItemStyles}>Postcode: {locationData.postcode}</p>
+      </ul>
     </div>
   );
+};
+
+
+const listItemStyles = {
+  marginBottom: '8px',
+  borderBottom: '1px solid #ddd',
+  paddingBottom: '8px',
 };
 
 export default LocationComponent;

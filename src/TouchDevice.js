@@ -71,11 +71,13 @@ function TouchDetectionComponent() {
   return (
     <div>
       <h2>Touch Information:</h2>
+      <ul>
       {touchInfo ? (
         <p>{touchInfo.isTouchDevice ? 'Touchscreen is supported.' : 'This device does not support touch.'}</p>
       ) : (
         <p>Loading touch information...</p>
       )}
+      </ul>
     </div>
   );
 }
