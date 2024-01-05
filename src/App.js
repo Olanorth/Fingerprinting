@@ -117,7 +117,6 @@ function App() {
 
 
   return (
-    <Router>
       <div style ={appContainer}>
         <header style={headerStyles}>privacychecks.com 
           <h1 style={heading}>Welcome to PrivacyChecks where we show you some nuts dropped by your browser :) </h1>
@@ -127,11 +126,7 @@ function App() {
             <Link to="/data-usage" onClick={handleLinkClick}>How we use your data</Link>
           </nav>
         </div>
-        <Routes>
-          <Route
-              path="/"
-              element={
-                <>
+        <div>
                   <h2 style={sectionHeading}>Device details</h2>
                   <BrowserDetails />
                   <Plugins />
@@ -154,12 +149,8 @@ function App() {
                       <p>{ipAddress || 'Loading...'}</p>
                       </ul>
                   </div>
-                </>
-              }
-            />
-        </Routes>
-      </div>
-    </Router>
+                </div>
+              </div>
     );
   }
   
