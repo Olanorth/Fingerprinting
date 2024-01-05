@@ -124,7 +124,7 @@ function App() {
         </header>
         <div style={sectionContainer}>
           <nav>
-            <Link to="/">Home</Link> | <Link to="/data-usage" onClick={handleLinkClick}>How we use your data</Link>
+            <Link to="/data-usage" onClick={handleLinkClick}>How we use your data</Link>
           </nav>
         </div>
         <Routes>
@@ -157,7 +157,6 @@ function App() {
                 </>
               }
             />
-          <Route path="/data-usage" element={<DataUsagePage handleLinkClick={handleLinkClick} />} />
         </Routes>
       </div>
     </Router>
