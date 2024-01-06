@@ -85,7 +85,7 @@ function App() {
           How we use your data
         </button>
         <p>
-          You are Unique in our dataset. If you choose to increase your visibility to trackers, you may visit {''}
+          You are Unique in our dataset. If you choose to decrease your visibility to trackers, you may visit {''}
           <a href="https://uk.pcmag.com/security/134656/you-tossed-your-cookies-but-theyre-still-tracking-you-heres-how-to-hide-your-browser-fingerprint" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>this link</a>.
         </p>
         {showDataUsageModal && (
