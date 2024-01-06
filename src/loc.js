@@ -161,14 +161,14 @@ const LocationComponent = () => {
             // Update state with the location data
             setLocationData(updatedLocationData);
 
-            console.log("updatedLocationData", updatedLocationData);
+            // console.log("updatedLocationData", updatedLocationData);
             // Send the location data to the server
-            axios.post('https://browserfapp.azurewebsites.net/api/storeLocationDetails', { 
+            axios.post('https://browserfapp.azurewebsites.net/loc', { 
               updatedLocationData, 
             });
-            console.log('Successfully posted:', updatedLocationData);
+            // console.log('Successfully posted:', updatedLocationData);
           } catch (error) {
-            console.error('Error fetching location details:', error.message);
+            console.error(error.message);
           }
         },
         (error) => {

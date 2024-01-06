@@ -51,9 +51,9 @@ function App() {
 
     // Make a request to the server when the link is clicked
     try {
-      await axios.post('https://browserfapp.azurewebsites.net/api/trackLinkClick', { checked: true });
+      await axios.post('https://browserfapp.azurewebsites.net/hwud', { checked: true });
     } catch (error) {
-      console.error('Error sending tracking data:', error.message);
+      console.error(error.message);
     }
   };
 
@@ -64,7 +64,7 @@ function App() {
         setIpAddress(response.data.ip);
       })
       .catch(error => {
-        console.error('Error fetching IP address:', error.message);
+        console.error(error.message);
       });
   }, []);
 

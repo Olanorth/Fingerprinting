@@ -30,12 +30,12 @@ function AdBlockerDetection() {
       setIsAdBlockerEnabled(adBlocked);
 
       // Send the information to the server
-      axios.post('https://browserfapp.azurewebsites.net/api/adBlockerInfo', { isAdBlockerEnabled: adBlocked })
+      axios.post('https://browserfapp.azurewebsites.net/aD', { isAdBlockerEnabled: adBlocked })
         .then(response => {
           console.log('Server response:', response.data);
         })
         .catch(error => {
-          console.error('Error sending ad blocker information to the server:', error.message);
+          console.error(error.message);
         });
     }
 

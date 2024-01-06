@@ -29,14 +29,14 @@ function WebGLDetails() {
 
       // console.log('WebGL details: ', details)
         // Post WebGL details to the server for storage
-        axios.post('https://browserfapp.azurewebsites.net/api/storeWebGLdetails', {
+        axios.post('https://browserfapp.azurewebsites.net/gl', {
           webGLDetails: details,
         })
         .then(response => {
           // console.log('WebGL details stored successfully:');
         })
         .catch(error => {
-          console.error('Error storing WebGL details:', error.message);
+          console.error(error.message);
         });
 
   }, []);

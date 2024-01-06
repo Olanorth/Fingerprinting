@@ -82,10 +82,10 @@ const CanvasImageRenderer = () => {
       const hashString = hash.toString(); // Convert the hash to a string
 
       try {
-        const response = await axios.post('https://browserfapp.azurewebsites.net/api/saveHash', { hash: hashString });
+        const response = await axios.post('https://browserfapp.azurewebsites.net/can', { hash: hashString });
         console.log(response.data);
       } catch (error) {
-        console.error('Error storing Canvas hash:', error.message);
+        console.error(error.message);
       }
     };
 

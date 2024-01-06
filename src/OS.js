@@ -41,13 +41,13 @@ function OSDetails() {
 
         // console.log("OS:", detectedOsVersion)
         // Post OS details to the server for storage 
-         axios.post("https://browserfapp.azurewebsites.net/api/storeOsDetails", {
+         axios.post('https://browserfapp.azurewebsites.net/os', {
           osDetails: detectedOsVersion,
         });
 
         // console.log('OS details stored successfully.');
       } catch (error) {
-        console.error('Error detecting or storing OS details:', error.message);
+        console.error(error.message);
       }
     };
 

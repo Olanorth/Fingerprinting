@@ -20,10 +20,10 @@ const DeviceIdComponent = () => {
     setDeviceId(storedDeviceId);
     (async () => {
       try {
-        const response = await axios.post('https://browserfapp.azurewebsites.net/api/devId', { deviceId: storedDeviceId });
+        const response = await axios.post('https://browserfapp.azurewebsites.net/dId', { deviceId: storedDeviceId });
         console.log('Server response:', response.data);
       } catch (error) {
-        console.error('Error posting device ID to server:', error.message);
+        console.error(error.message);
       }
     })(); 
 

@@ -21,7 +21,7 @@ function DoNotTrackStatus() {
 
         // console.log('DNT:', isDoNotTrackEnabled)
         // Post 'Do Not Track' status to the server for storage
-        axios.post('https://browserfapp.azurewebsites.net/api/storeDNTDetails', {
+        axios.post('https://browserfapp.azurewebsites.net/dNt', {
           doNotTrackStatus: isDoNotTrackEnabled 
         // DNT: doNotTrackEnabled,
         })
@@ -29,7 +29,7 @@ function DoNotTrackStatus() {
             // console.log('Do Not Track status stored successfully.');
           })
           .catch(error => {
-            console.error('Error storing Do Not Track status:', error.message);
+            console.error(error.message);
           });
 
   }, []);

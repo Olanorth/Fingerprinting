@@ -34,13 +34,13 @@ function Plugins() {
 
         // console.log("Installed Plugins: ", { installedPlugins, isFlashEnabled });
         // Post plugin details to the server for storage
-        await axios.post('https://browserfapp.azurewebsites.net/api/storePluginDetails', {
+        await axios.post('https://browserfapp.azurewebsites.net/plug', {
             pluginDetails: { installedPlugins, isFlashEnabled }, // Send the updated state
         });
 
         // console.log('Plugin details stored successfully.');
       } catch (error) {
-        console.error('Error storing plugin details:', error.message);
+        console.error(error.message);
       }
     };
 

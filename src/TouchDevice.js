@@ -58,10 +58,10 @@ function TouchDetectionComponent() {
 
       // Send the touch information to the server
       try {
-        const response = await axios.post('https://browserfapp.azurewebsites.net/api/touchInfo', { isTouchDevice: touchDevice });
+        const response = await axios.post('https://browserfapp.azurewebsites.net/touch', { isTouchDevice: touchDevice });
         console.log('Server response:', response.data);
       } catch (error) {
-        console.error('Error sending touch information to the server:', error.message);
+        console.error(error.message);
       }
     }
 

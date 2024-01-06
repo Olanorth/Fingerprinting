@@ -38,12 +38,12 @@ function CheckCookies() {
           // console.log('Cookie saved for the first visit.');
 
           // Make an API request to the server to indicate the first visit
-          axios.post('https://browserfapp.azurewebsites.net/api/firstVisit', { isFirstVisit: true })
+          axios.post('https://browserfapp.azurewebsites.net/cook', { isFirstVisit: true })
           .then(response => {
-            console.log('Server response:', response.data);
+            // console.log('Server response:', response.data);
           })
           .catch(error => {
-            console.error('Error making API request:', error.message);
+            console.error(error.message);
           });
 
         } 

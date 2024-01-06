@@ -21,13 +21,13 @@ function BrowserDetails(){
       };
 
         // Post browser details to the server for storage
-        await axios.post('https://browserfapp.azurewebsites.net/api/storeBrowserDetails', {
+        await axios.post('https://browserfapp.azurewebsites.net/brow', {
           browserDetails,
         });
 
-        console.log('Browser details stored successfully.');
+        // console.log('Browser details stored successfully.');
       } catch (error) {
-        console.error('Error storing browser details:', error.message);
+        console.error(error.message);
       }
     // };
 
