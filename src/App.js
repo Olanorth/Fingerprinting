@@ -97,11 +97,11 @@ function App() {
               During your interaction with our web app, we collect the following data for research purposes:
             </p>
             <ul>
-              <li style={listItemStyles}>Browser Details: Information about your browser type, version, plugins, and configurations.</li>
-              <li style={listItemStyles}>Device Details: Details about your device, including operating system, screen resolution, and hardware details.</li>
-              <li style={listItemStyles}>IP Address: Your IP address, a numerical label assigned to your device on the internet.</li>
-              <li style={listItemStyles}>Location Data: Geographical information about your approximate location based on your IP address or any location data you choose to provide.</li>
-              <li style={listItemStyles}>Privacy Settings: Data related to your browser and privacy settings that may influence your online experience.</li>
+              <li style={listItemStyles}>Browser Details</li>
+              <li style={listItemStyles}>Device Details</li>
+              <li style={listItemStyles}>IP Address</li>
+              <li style={listItemStyles}>Location Data</li>
+              <li style={listItemStyles}>Privacy Settings</li>
             </ul>
           </div>
 
@@ -113,7 +113,8 @@ function App() {
           </div>
           <div style={sectionContainer}>
             <p>
-              By using our web app, you explicitly consent to the collection and processing of the aforementioned data for the stated research purposes. If you have concerns or questions regarding our data handling practices, please contact us at dipznano@gmail.com.
+              By using our web app, you explicitly consent to the collection and processing of the aforementioned data for the stated research purposes. If you have concerns or questions regarding our data handling practices, please contact us at{' '}
+              <span style={{ textDecoration: 'underline' }}>dipznano@gmail.com</span>.
             </p>
             <p>
               We value your privacy and are dedicated to conducting this research in an ethical and responsible manner. Thank you for your trust and participation in our efforts to advance knowledge and awareness in the field of browser fingerprinting.
