@@ -13,6 +13,7 @@ import TouchDetectionComponent from './TouchDevice';
 import AdBlockerDetection from './ad';
 import LocationComponent from './loc';
 import DeviceIdComponent from './devID';
+import BatteryStatusComponent from './bat';
 
 
 
@@ -83,6 +84,10 @@ function App() {
         <button onClick={handleLinkClick} style={linkStyles}>
           How we use your data
         </button>
+        <p>
+          You are Unique in our dataset. If you choose to increase your visibility to trackers, you may visit {''}
+          <a href="https://uk.pcmag.com/security/134656/you-tossed-your-cookies-but-theyre-still-tracking-you-heres-how-to-hide-your-browser-fingerprint" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>this link</a>.
+        </p>
         {showDataUsageModal && (
           <div style={modalStyles}>
             {/* <p>This is where you explain how you use the user's data...</p> */}
@@ -140,6 +145,7 @@ function App() {
         <WebGLDetails />
         <OSDetails />
         <TouchDetectionComponent />
+        <BatteryStatusComponent />
         <h2 style={sectionHeading}>Privacy settings</h2>
         <CheckCookies />
         <DoNotTrackStatus />
