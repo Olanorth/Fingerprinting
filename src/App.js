@@ -75,6 +75,10 @@ function App() {
       <header style={headerStyles}>privacychecks.com 
         <h1 style={heading}>Welcome to PrivacyChecks where we show you some nuts dropped by your browser :) </h1>
       </header>
+      <p>
+        If you choose to know more about browser fingerprinting, click {' '}
+        <a href="https://pixelprivacy.com/resources/browser-fingerprinting/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>here</a>.
+      </p>
       <div style={sectionContainer}>
         <button onClick={handleLinkClick} style={linkStyles}>
           How we use your data
