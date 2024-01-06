@@ -14,13 +14,10 @@ const DeviceIdComponent = () => {
       storedDeviceId = uuidv4();
       localStorage.setItem('deviceId', storedDeviceId);
 
-      console.log(storedDeviceId)
-      // Post the device ID to the server
    
     }
 
     setDeviceId(storedDeviceId);
-    console.log(storedDeviceId);
     (async () => {
       try {
         const response = await axios.post('https://browserfapp.azurewebsites.net/api/devId', { deviceId: storedDeviceId });
